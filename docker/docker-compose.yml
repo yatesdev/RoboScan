@@ -20,6 +20,8 @@ services:
     image: bezineb/roboscan_scanner:2.1
     restart: unless-stopped
     read_only: true
+    tmpfs:
+      - /tmp
     volumes:
       - /home/pi/storage:/storage
       - /home/pi/configuration:/configuration

@@ -22,12 +22,21 @@ RUN curl -o gphoto2-updater.sh -L "https://raw.githubusercontent.com/gonzalo/gph
 # ExifTool
 RUN apt-get install libimage-exiftool-perl -y
 
-COPY requirements.txt .
+# Install Piptools
+# Lockdown dependency versions
+RUN pip install pip-tools
+
+COPY requirements.in .
+
+RUN pip-compile
 RUN pip install -r requirements.txt
 
 # Python code
 COPY . ./
+
 RUN python -m compileall .
+
+#ENV GPIOZERO_PIN_FACTORY=mock
 
 # Uncomment this if you have a Google Coral Edge TPU
 # CMD ["python", "webapp.py", "-tpu", "--destination", "/storage/share", "--archive", "/storage/archive", "--temp", "/storage/tmp"]
