@@ -19,7 +19,7 @@ services:
     build: ../src/
     image: yatesdev/roboscan_scanner:2.1
     restart: unless-stopped
-    read_only: true
+    # read_only: true
     tmpfs:
       - /tmp
     volumes:

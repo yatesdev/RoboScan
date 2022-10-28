@@ -111,9 +111,10 @@ class GPhoto2Camera(Camera):
     TIMEOUT = 10.0
 
     CONFIG_ISO = "iso"
-    CONFIG_APERTURE = "aperture"
+    # CONFIG_APERTURE = "aperture"
+    CONFIG_APERTURE = "f-number"
     CONFIG_SHUTTER_SPEED = "shutterspeed"
-    CONFIG_EXPOSURE_COMPENSATION = "exposurecompensation"
+    CONFIG_EXPOSURE_COMPENSATION = "exposuremetermode"
 
     def __init__(self, target_path: Path) -> None:
         self._target_path = target_path
