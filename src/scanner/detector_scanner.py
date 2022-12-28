@@ -23,14 +23,14 @@ LABEL_PARTIAL_PHOTO = "partial_photo"
 LABEL_SEPARATOR = "separator"
 LABEL_PHOTO = "photo"
 
-MIN_CONFIDENCE = 0.25
+MIN_CONFIDENCE = 0.40 #0.25
 MIN_NUMBER_OF_HOLES = 4
-MIN_COVERAGE = 0.4
+MIN_COVERAGE = 0.6
 
 MIN_X_MARGIN = 0.005
 MIN_Y_MARGIN = 0.02
 
-LEFT_SIDE = 0.10
+LEFT_SIDE = 0.10 #0.10
 
 DEBUG_PATH = pathlib.Path('/storage/share')
 
@@ -39,8 +39,8 @@ COUNTDOWN_TO_STOP = 3
 # Stepper motor settings
 SLEEP_TIME = 0.001
 DIRECTION = -1
-NORMAL_STEPS = 3
-LARGE_STEPS = 90
+NORMAL_STEPS = 20 #3
+LARGE_STEPS = 600 #90
 
 def _get_model_path() -> pathlib.Path:
     base_dir = pathlib.Path(__file__).parent.absolute()
